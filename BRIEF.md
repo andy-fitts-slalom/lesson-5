@@ -13,6 +13,8 @@ A personal link-in-bio page. One page, clean design, mobile-first. I want to sen
 - Dark mode by default with a light/dark toggle
 - Smooth hover animations on the link buttons
 - Google Font: Inter
+- I want subtle animation to occur in the background pattern that is responsive to mouse movement
+- base the color scheme off of my portfolio site
 
 ## Links
 Display these as stacked buttons, full-width within the card:
