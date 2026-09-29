@@ -11,7 +11,12 @@
   --accent: #d6ed7a;
   --accent-ink: #1b2113;
   --warm: #f6a17f;
+  --pointer-glow: rgba(214, 237, 122, 0.09);
   --shadow: rgba(0, 0, 0, 0.28);
+  --pointer-x: 50%;
+  --pointer-y: 50%;
+  --pattern-x: 0px;
+  --pattern-y: 0px;
 }
 
 :root[data-theme="light"] {
@@ -26,6 +31,7 @@
   --accent: #587d39;
   --accent-ink: #ffffff;
   --warm: #a84f32;
+  --pointer-glow: rgba(88, 125, 57, 0.1);
   --shadow: rgba(44, 54, 40, 0.1);
 }
 
@@ -44,6 +50,7 @@ body {
   margin: 0;
   color: var(--text);
   background:
+    radial-gradient(circle 28rem at var(--pointer-x) var(--pointer-y), var(--pointer-glow), transparent 100%),
     linear-gradient(135deg, transparent 0%, rgba(214, 237, 122, 0.035) 38%, transparent 68%),
     linear-gradient(315deg, rgba(246, 161, 127, 0.045), transparent 42%),
     var(--page);
@@ -60,6 +67,7 @@ body::before {
   background-image:
     linear-gradient(var(--grid) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-position: var(--pattern-x) var(--pattern-y), var(--pattern-x) var(--pattern-y);
   background-size: 34px 34px;
   content: "";
   pointer-events: none;
