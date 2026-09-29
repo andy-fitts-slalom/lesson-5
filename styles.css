@@ -1,32 +1,36 @@
 :root,
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --page: #111512;
-  --surface: #191f1b;
-  --surface-raised: #202923;
-  --text: #f1f3e9;
-  --muted: #a5afa5;
-  --line: #343d36;
-  --grid: rgba(221, 237, 213, 0.035);
-  --accent: #d6ed7a;
-  --accent-ink: #1b2113;
-  --warm: #f6a17f;
-  --shadow: rgba(0, 0, 0, 0.28);
+  --page: oklch(18% 0.025 165);
+  --surface: oklch(22% 0.025 165);
+  --surface-raised: oklch(29% 0.035 165);
+  --text: oklch(97% 0.012 105);
+  --muted: oklch(75% 0.025 165);
+  --line: oklch(40% 0.025 165);
+  --grid: oklch(97% 0.012 105 / 0.04);
+  --accent: oklch(87% 0.19 120);
+  --accent-text: oklch(87% 0.19 120);
+  --accent-ink: oklch(22% 0.025 165);
+  --warm: oklch(92% 0.055 35);
+  --blue: oklch(78% 0.1 235);
+  --shadow: oklch(10% 0.02 165 / 0.28);
 }
 
 :root[data-theme="light"] {
   color-scheme: light;
-  --page: #eef0e8;
-  --surface: #fbfcf7;
-  --surface-raised: #f1f4e9;
-  --text: #202820;
-  --muted: #5f6b61;
-  --line: #d8dfd2;
-  --grid: rgba(40, 57, 42, 0.055);
-  --accent: #587d39;
-  --accent-ink: #ffffff;
-  --warm: #a84f32;
-  --shadow: rgba(44, 54, 40, 0.1);
+  --page: oklch(97% 0.012 105);
+  --surface: oklch(99% 0.006 105);
+  --surface-raised: oklch(91% 0.075 165);
+  --text: oklch(22% 0.025 165);
+  --muted: oklch(48% 0.025 165);
+  --line: oklch(86% 0.025 105);
+  --grid: oklch(22% 0.025 165 / 0.055);
+  --accent: oklch(87% 0.19 120);
+  --accent-text: oklch(45% 0.12 120);
+  --accent-ink: oklch(22% 0.025 165);
+  --warm: oklch(52% 0.19 30);
+  --blue: oklch(78% 0.1 235);
+  --shadow: oklch(22% 0.025 165 / 0.12);
 }
 
 * {
@@ -44,8 +48,8 @@ body {
   margin: 0;
   color: var(--text);
   background:
-    linear-gradient(135deg, transparent 0%, rgba(214, 237, 122, 0.035) 38%, transparent 68%),
-    linear-gradient(315deg, rgba(246, 161, 127, 0.045), transparent 42%),
+    linear-gradient(135deg, transparent 0%, color-mix(in oklch, var(--accent) 4%, transparent) 38%, transparent 68%),
+    linear-gradient(315deg, color-mix(in oklch, var(--warm) 4%, transparent), transparent 42%),
     var(--page);
   font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -234,7 +238,7 @@ a {
 
 .eyebrow {
   margin: 0 0 10px;
-  color: var(--accent);
+  color: var(--accent-text);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -314,15 +318,11 @@ h1 {
   place-items: center;
   border-radius: 5px;
   background: var(--surface-raised);
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .linkedin-icon {
-  color: #9ec5bb;
-}
-
-:root[data-theme="light"] .linkedin-icon {
-  color: #286c61;
+  color: var(--blue);
 }
 
 .email-icon {
@@ -382,7 +382,7 @@ h1 {
 
 .link-button:hover .link-arrow {
   transform: translate(2px, -2px);
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .link-button:focus-visible,
