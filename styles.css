@@ -325,6 +325,10 @@ h1 {
   color: var(--blue);
 }
 
+.link-icon.linkedin-icon svg {
+  stroke: none;
+}
+
 .email-icon {
   color: var(--warm);
 }
